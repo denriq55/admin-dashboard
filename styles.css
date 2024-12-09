@@ -1,26 +1,87 @@
+@font-face {
+    font-family: Lato Regular; 
+    src: url(fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: Lato Bold; 
+    src: url(fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: Barriecito;
+    src: url(fonts/Barriecito-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     
 }
 
+body {
+    width: 100%;
+    height: 100%;
+}
 
+:root {
+    --primary-color: #6221bf;
+    --text-primary:  rgb(7, 7, 7);
+    --text-secondary: rgb(88, 87, 87);
+}
+
+
+
+
+
+h3 {
+    font-family: Lato Bold, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, 
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h4, h5 {
+    font-family: Lato Bold, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, 
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--text-primary);
+}
+
+
+
+p, li {
+    font-family: Lato Regular, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, 
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.dot {
+height: 2rem;
+width: 2rem;
+background-color: var(--primary-color);
+border-radius: 10%;
+
+}
 
 .container {
     display: grid;
     grid-template-columns: 1fr 5fr;
-
-    height: 100vh;
-    width: 100vw;
+    grid-template-rows: 1fr 4fr;
+ 
     
 }
 
 .sidebar {
-    background-color: rgb(37, 165, 229);
+    background-image: linear-gradient(to bottom right, rgb(118, 240, 226), rgb(161, 116, 164));
     display: grid;
     grid-column: 1;
     grid-row: 1 / 3;
-    grid-template-rows: 1fr 3fr 5fr;
+    grid-template-rows: 1fr 2fr 5fr;
+  
     
    
     
@@ -43,16 +104,18 @@
     width: 3vw;
 }
 
+
 .sidebar-icon,
 .header-icon {
     width: 20px;
+    
 }
 
 .search-box {
-    border: 1px solid black;
+    border: 1px solid rgb(50, 26, 60);
     border-radius: 25px;
     width: 50vw;
-    height: 2rem;
+    height: 1.7rem;
 }
 
 li {
@@ -63,37 +126,56 @@ li {
 }
 
 .header {
-    display: grid;
-    grid-template-rows: 1fr 2fr;
-    background-color: rgb(233, 235, 235);
-    grid-column: 2; 
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background-color: #edebed;
+    
     
 }
+
+
 
 .header-first-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .name {
     font-size: 18px;
-    color: black;
-}
+    color: rgb(26, 55, 51);
+    font-weight: bold;
+  }
+
+  .small-name {
+    font-family: Lato Regular, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, 
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: rgb(26, 55, 51);
+  }
+
+  
 
 .header-second-row-1 {
     display: flex;
     gap: 10px;
     align-items: center; 
+    
 }
 
 button {
   
-    background-color: aquamarine;
+    background-color: var(--primary-color);
     margin: 1rem;
     padding: 0.3rem;
     border-radius: 15px;
+    border: solid 1px #1b0539;
     width: 80px;
     align-items: center; 
+    color: #fffff0;
+    font-weight: 700;
 }
 
 
@@ -141,32 +223,63 @@ button {
 
 
 .main {
-    background-color: rgb(223, 223, 223);
-    grid-column: 2;
-    gap: 30px;
+    background-color: #fffff0;
+    padding-top: 1rem;
+    gap: 15px;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    padding-top: 15px;
+    padding: 20px;
+   box-sizing: border-box;
    
+    
+    
 }
 
 
-.left-side * div {
-    border: solid 1px black;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgb(233, 233, 233);
+
+.left-side * .box {
+display: flex;
+flex-direction: column;
+padding: 20px;
+border: solid 1px black;
+box-sizing: border-box;
+border-radius: 10px;
+background-color: rgb(230, 238, 237);
+border-left: rgb(44, 158, 184) 5px solid;
+}
+
+
+.box > :nth-child(3) {
+    display: flex;
+    margin-top: auto;
+    align-self: end;
+    gap: 10px;
   
     
 }
 
+.cards * h5 {
+    font-size: 1rem;
+}
+
+.cards * p {
+    font-size: 1rem;
+}
+
+.box * img {
+ width: 1.5vw;
+ 
+}
+
+
+
+
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
-    height: 500px;
-    
-    
+    height: 95%;
+    box-sizing: border-box;
     
 }
 
@@ -174,9 +287,12 @@ button {
 
 .trending, .announcements {
     border: solid 1px black;
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(230, 238, 237);
     border-radius: 10px;
     padding: 20px;
+    
+   
+    
     
 }
 
@@ -188,8 +304,9 @@ button {
 
 
 .trending {
-    display: grid;
+   display: grid;
     gap: 10px;
+    
     
 }
 
@@ -202,10 +319,13 @@ button {
 
 .announcements {
     margin-bottom: 1rem;
+    
 }
 
+
+
 p {
-    color: rgb(87, 86, 86);
+    color: var(--text-secondary);
     
 }
 
@@ -228,7 +348,6 @@ h4 {
     padding-right: 20px;
 }
 
-
-
-
-
+.right-side {
+    display: grid;
+}
